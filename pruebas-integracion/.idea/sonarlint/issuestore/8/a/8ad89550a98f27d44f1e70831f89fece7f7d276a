@@ -1,0 +1,28 @@
+
+Q
+java:S1128";Remove this unused import 'io.cucumber.java.DocStringType'.(›Òğ£
+J
+java:S1128"4Remove this unused import 'io.cucumber.java.en.And'.(”ô—É
+R
+java:S1128"7Remove this unused import 'io.restassured.RestAssured'.(ºÉµ±ùÿÿÿÿ
+R
+java:S1128	"<Remove this unused import 'io.restassured.http.ContentType'.(ïè‘
+P
+java:S1128
+":Remove this unused import 'net.serenitybdd.core.Serenity'.(©°Ñµ
+I
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ
+E
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ
+Y
+java:S1128">Remove this unused import 'net.serenitybdd.rest.SerenityRest'.(ø¢Ñøÿÿÿÿ
+^
+java:S1128"CRemove this unused import 'net.serenitybdd.rest.SerenityRest.rest'.(êÃÚîøÿÿÿÿ
+M
+java:S1128"2Remove this unused import 'org.hamcrest.Matchers'.(İ†âúÿÿÿÿ
+j
+java:S1128"ORemove this unused import 'com.fasterxml.jackson.core.JsonProcessingException'.(ßÔïÇûÿÿÿÿ
+e
+java:S1128"JRemove this unused import 'com.fasterxml.jackson.core.type.TypeReference'.(ãĞß¤ÿÿÿÿÿ
+^
+java:S1128"HRemove this unused import 'com.fasterxml.jackson.databind.ObjectMapper'.(´‘¨™
