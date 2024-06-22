@@ -6,14 +6,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
 import net.serenitybdd.core.Serenity;
-import java.util.HashMap;
-import java.util.Map;
 import static net.serenitybdd.rest.SerenityRest.*;
 import static net.serenitybdd.rest.SerenityRest.rest;
 import static org.hamcrest.Matchers.*;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import net.serenitybdd.rest.SerenityRest;
 import org.hamcrest.Matchers;
 
@@ -34,18 +29,18 @@ public class StepDefsPet {
     }
 
     @Then("el servidor debe de responder con un status {int}")
-    public void elServidorDebeDeResponderConUnStatus(int arg0) {
-        SerenityRest.then().statusCode(arg0);
+    public void elServidorDebeDeResponderConUnStatus(int status) {
+        SerenityRest.then().statusCode(status);
     }
 
     @And("el cuerpo de la respuesta contiene la propiedad id con el valor {int}")
-    public void elCuerpoDeLaRespuestaContieneLaPropiedadIdConElValor(int arg0) {
-        SerenityRest.then().body("id", Matchers.is(arg0));
+    public void elCuerpoDeLaRespuestaContieneLaPropiedadIdConElValor(int id) {
+        SerenityRest.then().body("id", Matchers.is(id));
     }
 
     @And("el cuerpo de la respuesta contiene la propiedad name con el valor {string}")
-    public void elCuerpoDeLaRespuestaContieneLaPropiedadNameConElValor(String arg0) {
-        SerenityRest.then().body("name", Matchers.is(arg0));
+    public void elCuerpoDeLaRespuestaContieneLaPropiedadNameConElValor(String value) {
+        SerenityRest.then().body("name", Matchers.is(value));
     }
 
 
@@ -89,11 +84,6 @@ public class StepDefsPet {
                 .andReturn();
     }
 
-
-    @And("el cuerpo de la respuesta debe contener los detalles del nuevo  mascota registrado")
-    public void elCuerpoDeLaRespuestaDebeContenerLosDetallesDelNuevoMascotaRegistrado() {
-        //TODO
-    }
 
     @When("el cliente realiza una peticion DELETE a {string} con id de mascota eliminado {int}")
     public void elClienteRealizaUnaPeticionDELETEAConIdDeMascotaEliminado(String path, int id) {

@@ -80,7 +80,7 @@ Feature: Gestionar  mascotas
     """
     When el cliente realiza una peticion POST a "/pet/" con los detalles del nuevo de mascota
     Then el servidor debe de responder con un status 200
-    And el cuerpo de la respuesta debe contener los detalles del nuevo  mascota registrado
+
 
 
   @eliminarMascota
