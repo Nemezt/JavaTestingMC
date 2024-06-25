@@ -1,31 +1,11 @@
 Feature: Gestionar  mascotas
 
-  @obtenerMascotax
-  Scenario: Listar una mascota por idx
+  @obtenerMascotaErronea
+  Scenario: Listar una mascota por id incorrecto
     Given el cliente configura la URI base
-    When el cliente realiza una peticion GET a "/pet/10"
-    Then el servidor debe de responder con un status 200
-    And el cuerpo de la respuesta contiene la propiedad id con el valor 10
-    And el cuerpo de la respuesta contiene la propiedad name con el valor "doggie"
+    When el cliente realiza una peticion GET a "/pet/100"
+    Then el servidor debe de responder con un status 404
 
-  @obtenerMascota
-  Scenario Outline: Listar una mascota por id
-    Given el cliente configura la URI base
-    When el cliente realiza una peticion GET a <uri>
-    Then el servidor debe de responder con un status <statusCode>
-    And el cuerpo de la respuesta contiene la propiedad id con el valor <value>
-    And el cuerpo de la respuesta contiene la propiedad name con el valor <value1>
-    Examples:
-      | uri      | statusCode | value | value1     |
-      | "/pet/9" | 200        | 9     | "josuepet" |
-      | "/pet/7" | 200        | 7     | "Lion 1"   |
-
-  @obtenerMascotasEstado
-  Scenario: Listar una mascota por estado
-    Given el cliente configura la URI base
-    When el cliente realiza una peticion GET a "/pet/findByStatus?status=available"
-    Then el servidor debe de responder con un status 200
-    And el cuerpo de la respuesta debe de ser una lista de mascota con el estado
 
 
   @actualizarMascota
@@ -81,7 +61,24 @@ Feature: Gestionar  mascotas
     When el cliente realiza una peticion POST a "/pet/" con los detalles del nuevo de mascota
     Then el servidor debe de responder con un status 200
 
+  @obtenerMascota
+  Scenario Outline: Listar una mascota por id
+    Given el cliente configura la URI base
+    When el cliente realiza una peticion GET a <uri>
+    Then el servidor debe de responder con un status <statusCode>
+    And el cuerpo de la respuesta contiene la propiedad id con el valor <value>
+    And el cuerpo de la respuesta contiene la propiedad name con el valor <value1>
+    Examples:
+      | uri      | statusCode | value | value1     |
+      | "/pet/1" | 200        | 1     | "snow" |
+      | "/pet/11" | 200        | 11    | "Shadow"   |
 
+  @obtenerMascotasEstado
+  Scenario: Listar mascotas por estado
+    Given el cliente configura la URI base
+    When el cliente realiza una peticion GET a "/pet/findByStatus?status=available"
+    Then el servidor debe de responder con un status 200
+    And el cuerpo de la respuesta debe de ser una lista de mascota con el estado
 
   @eliminarMascota
   Scenario: Eliminar una  mascota en el sistema
