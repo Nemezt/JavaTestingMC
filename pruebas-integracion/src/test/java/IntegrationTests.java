@@ -1,10 +1,6 @@
 import org.junit.runner.RunWith;
-
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
-
-import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
-import static io.cucumber.junit.CucumberOptions.SnippetType.UNDERSCORE;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(

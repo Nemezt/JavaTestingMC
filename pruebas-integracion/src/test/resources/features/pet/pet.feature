@@ -1,12 +1,10 @@
-Feature: Gestionar  mascotas
+Feature: Gestionar mascotas
 
   @obtenerMascotaErronea
   Scenario: Listar una mascota por id incorrecto
     Given el cliente configura la URI base
     When el cliente realiza una peticion GET a "/pet/100"
     Then el servidor debe de responder con un status 404
-
-
 
   @actualizarMascota
   Scenario: Actualizar una mascota en el sistema
