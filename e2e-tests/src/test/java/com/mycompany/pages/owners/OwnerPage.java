@@ -23,8 +23,8 @@ public class OwnerPage extends PageObject {
     @FindBy(xpath = "/html/body/div/div/form/div[2]/div/button")
     WebElementFacade ownerSearchOptionMenu;
 
-    @FindBy(css = "#ownersTable tbody")
-    WebElementFacade ownersTable;
+    @FindBy(xpath = "/html/body/div/div/table[1]/tbody/tr[1]/td/strong")
+    WebElementFacade ownersTableName;
 
     @FindBy(xpath = "//*[@id=\"ownerInformation\"]")
     WebElementFacade ownerInformation;
@@ -76,10 +76,7 @@ public class OwnerPage extends PageObject {
         ownerSearchOptionMenu.waitUntilClickable().click();
     }
 
-    @Step("Get Owners table")
-    public int getOwnersTable() {
-        return ownersTable.thenFindAll(By.xpath("./tr")).size();
-    }
+
 
     @Step("Enter last name {0}")
     public void findLastName(String lastName) {
@@ -142,9 +139,7 @@ public class OwnerPage extends PageObject {
 
     @Step("Get full name")
     public String getFullName() {
-        List<WebElementFacade> rows = ownersTable.thenFindAll(By.xpath("./tr"));
-        WebElementFacade lastRow = rows.get(rows.size()-1);
-        return lastRow.findElement(By.cssSelector("td a")).getText();
+        return ownersTableName.waitUntilVisible().getText();
     }
 
 }

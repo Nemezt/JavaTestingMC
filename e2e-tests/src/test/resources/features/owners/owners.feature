@@ -9,7 +9,7 @@ Feature: Gestionar propietarios
     And  el cliente selecciona la opción buscar propietario
     Then la página debe mostrar una lista de propietarios válida
 
-  @buscarPropietario
+  @buscarPropietarioApellido
   Scenario: Buscar propietario
     Given el cliente tiene un propietario para buscar "Black"
     And el cliente abre el navegador
@@ -31,5 +31,6 @@ Feature: Gestionar propietarios
     Then la página debe mostrar la información del propietario registrado
     Examples:
       | firstName | lastName | address      | city | telephone |
-      | John      | Doe      | 1234 Main St | NY   | 123456789 |
-
+      | Andrés      | Martínez      | San José | San José   | 123456789 |
+      | Marcos      | Sanchez       | San José | San José   | 123456789 |
+      | Monica      | Bolaños       | San José | San José   | 123456789 |
