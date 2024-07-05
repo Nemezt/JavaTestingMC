@@ -15,7 +15,7 @@ Feature: Gestionar propietarios
     And el cliente abre el navegador
     And el cliente navega al menú encontrar propietarios
     When el cliente ingresa el apellido
-    And el cliente selecciona la opción buscar
+    And el cliente selecciona la opción buscar propietario
     Then la página debe mostrar la información del propietario
 
   @registrarPropietario

@@ -5,9 +5,7 @@ import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
-import org.openqa.selenium.By;
 
-import java.util.List;
 
 public class OwnerPage extends PageObject {
 
@@ -60,23 +58,16 @@ public class OwnerPage extends PageObject {
         ownerMenuLink.waitUntilClickable().click();
     }
 
-    @Step("Click on the owner option button")
-    public void clickOnOwnerOptionButton() {
-        ownerOptionButton.waitUntilClickable().click();
+
+    @Step("Click on the owner search option")
+    public void clickOnOwnerSearchOptionMenu() {
+        ownerSearchOptionMenu.waitUntilClickable().click();
     }
 
     @Step("Get Owners header text")
     public String getOwnersHeaderText() {
         return ownersTitle.waitUntilVisible().getText();
     }
-
-
-    @Step("Click on the owner search option menu")
-    public void clickOnOwnerSearchOptionMenu() {
-        ownerSearchOptionMenu.waitUntilClickable().click();
-    }
-
-
 
     @Step("Enter last name {0}")
     public void findLastName(String lastName) {

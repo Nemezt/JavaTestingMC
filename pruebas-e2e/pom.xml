@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany</groupId>
-  <artifactId>e2e-tests</artifactId>
+  <artifactId>pruebas-e2e</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
 

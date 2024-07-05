@@ -30,18 +30,14 @@ public class OwnersSteps {
 
     @And("el cliente selecciona la opción buscar propietario")
     public void elClienteSeleccionaLaOpcionBuscarPropietario() {
-        ownerPage.clickOnOwnerOptionButton();
+        ownerPage.clickOnOwnerSearchOptionMenu();
     }
+
 
     @Then("la página debe mostrar una lista de propietarios válida")
     public void laPaginaDebeMostrarUnaListaDePropietariosValida() {
         String headerText = ownerPage.getOwnersHeaderText();
         assertEquals("Owners", headerText);
-    }
-
-    @When("el cliente selecciona la opción buscar")
-    public void elClienteSeleccionaLaOpcionBuscar() {
-        ownerPage.clickOnOwnerSearchOptionMenu();
     }
 
 
