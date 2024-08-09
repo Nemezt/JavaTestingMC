@@ -1,7 +1,7 @@
 # 🧪 JavaTestingMC
 Java Testing Mito Code
 
-# 📁 Estrtructura de carpetas
+# 📁 Estructura de carpetas
 
 # Pruebas Unitarias
     📂 app-clinica-mascotas
